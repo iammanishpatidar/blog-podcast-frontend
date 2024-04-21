@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { Text, Heading, Button, Img } from "../../components";
 import BloggerDetailsPagination from "../../components/BloggerDetailsPagination";
 import Footer from "../../components/Footer";
+import Header from "../../components/Header"
 
 export default function BloggerDetailsPage() {
   return (
@@ -12,7 +13,7 @@ export default function BloggerDetailsPage() {
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full bg-white-A700">
-        <header className="flex flex-row justify-between items-center w-full p-6 bg-white-A700">
+        {/* <header className="flex flex-row justify-between items-center w-full p-6 bg-white-A700">
           <div className="flex flex-row justify-between items-center w-[55%] mt-0.5 ml-[139px]">
             <Img src="images/img_group_150.svg" alt="image" className="h-6" />
             <div className="flex flex-row justify-between items-center w-[53%]">
@@ -37,7 +38,8 @@ export default function BloggerDetailsPage() {
             </div>
           </div>
           <Img src="images/img_search.svg" alt="search_one" className="h-[30px] w-[30px] mr-[139px]" />
-        </header>
+        </header> */}
+        <Header />
         <div className="flex flex-col items-center justify-start w-full mt-10 gap-[97px]">
           <div className="flex flex-row justify-center w-full">
             <div className="flex flex-col items-center justify-start w-full">
@@ -403,7 +405,8 @@ export default function BloggerDetailsPage() {
             <BloggerDetailsPagination className="flex flex-row justify-start mt-[50px]" />
           </div>
         </div>
-        <Footer className="flex justify-center items-center w-full mt-[97px] p-[33px] bg-gray-600_01" />
+        {/* <Footer className="flex justify-center items-center w-full mt-[97px] p-[33px] bg-gray-600_01" /> */}
+        <Footer />
       </div>
     </>
   );

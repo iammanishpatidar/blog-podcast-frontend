@@ -1,11 +1,12 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import Home from "pages/Home";
-import NotFound from "pages/NotFound";
 import LandingPage from "pages/LandingPage";
-import BlogDetails from "pages/BlogDetails";
 import ContactUs from "pages/ContactUs";
 import BloggerDetails from "pages/BloggerDetails";
+import Home from "./components/Home";
+import NotFound from "./pages/NotFound";
+import BlogDetails from "components/BlogDetails";
+import Blogs from "components/Blogs/Blogs";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -14,6 +15,10 @@ const ProjectRoutes = () => {
     {
       path: "/",
       element: <LandingPage />,
+    },
+    {
+      path: "/blogs",
+      element: <Blogs />,
     },
     {
       path: "blogdetails",

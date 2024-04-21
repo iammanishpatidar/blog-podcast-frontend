@@ -11,7 +11,7 @@ const Text = ({ children, className = "", as, size = "md", ...restProps }) => {
   const Component = as || "p";
 
   return (
-    <Component className={`text-blue_gray-600 font-publicsans ${className} ${sizes[size]}`} {...restProps}>
+    <Component className={`cursor-pointer text-blue_gray-600 font-publicsans ${className} ${sizes[size]}`} {...restProps}>
       {children}
     </Component>
   );

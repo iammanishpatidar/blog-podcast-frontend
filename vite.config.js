@@ -9,5 +9,10 @@ export default defineConfig({
   build: {
     outDir: "build",
   },
+  server: {
+    hmr: {
+      overlay: false
+    }
+  },
   plugins: [tsconfigPaths(), react()],
 });
