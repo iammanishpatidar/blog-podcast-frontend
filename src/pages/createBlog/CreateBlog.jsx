@@ -28,7 +28,8 @@ const CreateBlog = () => {
       };
 
       const res = await axios.post(
-        "http://localhost:3000/api/articles/post",
+        "http://localhost:3002/api/articles/post",
+        // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI4ZTllNmE2ODQyMGJlZjBmMjliNTgiLCJlbWFpbCI6ImFydmluZDExQGdtYWlsLmNvbSIsImlhdCI6MTcxMzk1NzQwMiwiZXhwIjoxNzE0MDQzODAyfQ.-LaHI6nFGHXnOXYlidS9htuzM5crDCBXpE0MlREEgDQ
         formData,
         config
       );
@@ -44,11 +45,13 @@ const CreateBlog = () => {
       setTitle("");
       setCoverImg(null);
     } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: error.response.data.message,
-      });
+      // Swal.fire({
+      //   icon: "error",
+      //   title: "Oops...",
+      //   // text: error.response.data.message,
+      //   text: "Failed to create post",
+      // });
+      console.log("Erro while posting data...", error)
     }
   };
 

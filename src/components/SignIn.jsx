@@ -58,7 +58,7 @@ const SignIn = ({ setShowSignIn }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/users/login",
+        "http://localhost:3002/api/users/login",
         userData
       );
       Cookies.set("accessToken", res.data.data.accessToken);
@@ -74,11 +74,12 @@ const SignIn = ({ setShowSignIn }) => {
 
       setShowSignIn(false);
     } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: error.response.data.message,
-      });
+      // Swal.fire({
+      //   icon: "error",
+      //   title: "Oops...",
+      //   text: error.response.data.message,
+      // });
+      console.log("Error in sign in...", error);
     }
   };
 
