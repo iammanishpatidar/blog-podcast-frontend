@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import NotFound from "./pages/NotFound";
 import BlogDetails from "components/BlogDetails";
 import Blogs from "components/Blogs/Blogs";
+import CreateBlog from "pages/createBlog/CreateBlog";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -31,6 +32,10 @@ const ProjectRoutes = () => {
     {
       path: "bloggerdetails",
       element: <BloggerDetails />,
+    },
+    {
+      path: "new-post",
+      element: <CreateBlog />,
     },
   ]);
 

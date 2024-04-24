@@ -18,7 +18,7 @@ const variants = {
     red_50: "bg-red-50",
     gray_600_01: "bg-gray-600_01",
     gray_200: "bg-gray-200 text-blue_gray-600",
-    indigo_900_4f: "bg-indigo-900_4f",
+    // indigo_900_4f: "bg-indigo-900_4f",
   },
   outline: {
     indigo_200: "border-indigo-200 border-2 border-solid text-indigo-900_01",
@@ -32,10 +32,10 @@ const sizes = {
   lg: "h-[45px] px-5 text-sm",
   "4xl": "h-[71px] px-[35px] text-2xl",
   "7xl": "h-[76px] px-[13px]",
-  "5xl": "h-[72px] px-7 text-lg",
+  // "5xl": "h-[72px] px-7 text-lg",
   md: "h-[39px] px-[17px] text-lg",
   xl: "h-[55px] px-3",
-  "6xl": "h-[72px] px-[18px]",
+  // "6xl": "h-[72px] px-[18px]",
 };
 
 const Button = ({
@@ -51,7 +51,11 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`${className} flex items-center justify-center text-center cursor-pointer ${(shape && shapes[shape]) || ""} ${(size && sizes[size]) || ""} ${(variant && variants[variant]?.[color]) || ""}`}
+      className={`${className} flex items-center justify-center text-center cursor-pointer ${
+        (shape && shapes[shape]) || ""
+      } ${(size && sizes[size]) || ""} ${
+        (variant && variants[variant]?.[color]) || ""
+      }`}
       {...restProps}
     >
       {!!leftIcon && leftIcon}
@@ -67,7 +71,19 @@ Button.propTypes = {
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,
   shape: PropTypes.oneOf(["round", "circle"]),
-  size: PropTypes.oneOf(["2xl", "3xl", "sm", "xs", "lg", "4xl", "7xl", "5xl", "md", "xl", "6xl"]),
+  size: PropTypes.oneOf([
+    "2xl",
+    "3xl",
+    "sm",
+    "xs",
+    "lg",
+    "4xl",
+    "7xl",
+    "5xl",
+    "md",
+    "xl",
+    "6xl",
+  ]),
   variant: PropTypes.oneOf(["fill", "outline"]),
   color: PropTypes.oneOf([
     "indigo_900_01",

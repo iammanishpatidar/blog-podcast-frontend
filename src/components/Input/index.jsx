@@ -6,7 +6,7 @@ const shapes = {
 };
 const variants = {
   fill: {
-    white_A700: "bg-white-A700 text-indigo-900_79",
+    // white_A700: "bg-white-A700 text-indigo-900_79",
   },
   outline: {
     gray_300_02: "border-gray-300_02 border border-solid text-gray-400",
@@ -20,6 +20,7 @@ const sizes = {
 const Input = React.forwardRef(
   (
     {
+      value,
       className = "",
       name = "",
       placeholder = "",
@@ -35,25 +36,38 @@ const Input = React.forwardRef(
       color = "gray_300_02",
       ...restProps
     },
-    ref,
+    ref
   ) => {
-    const handleChange = (e) => {
-      if (onChange) onChange(e?.target?.value);
-    };
+    // const handleChange = (e) => {
+    //   if (onChange) onChange(e?.target?.value);
+    // };
 
     return (
       <>
         <div
-          className={`${className} flex items-center justify-center border border-solid rounded-[5px] ${shapes[shape] || ""} ${variants[variant]?.[color] || variants[variant] || ""} ${sizes[size] || ""}`}
+          className={`${className} flex items-center justify-center border border-solid rounded-[5px] ${
+            shapes[shape] || ""
+          } ${variants[variant]?.[color] || variants[variant] || ""} ${
+            sizes[size] || ""
+          }`}
         >
           {!!label && label}
           {!!prefix && prefix}
-          <input ref={ref} type={type} name={name} onChange={handleChange} placeholder={placeholder} {...restProps} />
+          <input
+            className="text-black-900"
+            value={value}
+            ref={ref}
+            type={type}
+            name={name}
+            onChange={onChange}
+            placeholder={placeholder}
+            {...restProps}
+          />
           {!!suffix && suffix}
         </div>
       </>
     );
-  },
+  }
 );
 
 Input.propTypes = {
@@ -67,7 +81,7 @@ Input.propTypes = {
   shape: PropTypes.oneOf(["round"]),
   size: PropTypes.oneOf(["sm", "xs"]),
   variant: PropTypes.oneOf(["fill", "outline"]),
-  color: PropTypes.oneOf(["white_A700", "gray_300_02"]),
+  // color: PropTypes.oneOf(["white_A700", "gray_300_02"]),
 };
 
 export { Input };
